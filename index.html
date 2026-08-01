@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" as="image" href="image-25.png" fetchpriority="high" />
+  <title>Desperte o Vendedor 7% | Pare de vender como amador</title>
+  <style>
+    :root {
+      --bg: #070b15;
+      --surface: #111827;
+      --surface-warm: #211617;
+      --fg: #f8fafc;
+      --fg-2: #dbe7ff;
+      --muted: #a9b7d0;
+      --meta: #6f7d96;
+      --border: rgba(255,255,255,.12);
+      --border-soft: rgba(255,255,255,.08);
+      --accent: #ff6a1a;
+      --accent-on: #ffffff;
+      --accent-hover: #ff7f2f;
+      --accent-active: color-mix(in oklab, var(--accent), black 14%);
+      --success: #31d08b;
+      --warn: #f7b955;
+      --danger: #ff5b5b;
+      --font-display: "Arial Black", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-body: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+      --text-xs: 12px;
+      --text-sm: 14px;
+      --text-base: 16px;
+      --text-lg: 18px;
+      --text-xl: 24px;
+      --text-2xl: 32px;
+      --text-3xl: 44px;
+      --text-4xl: 60px;
+      --leading-body: 1.15;
+      --leading-tight: 1.30;
+      --tracking-display: 0;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-12: 48px;
+      --section-y-desktop: 96px;
+      --section-y-tablet: 64px;
+      --section-y-phone: 40px;
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-pill: 999px;
+      --elev-flat: none;
+      --elev-ring: 0 0 0 1px var(--border);
+      --elev-raised: 0 24px 80px rgba(0,0,0,.28);
+      --focus-ring: 0 0 0 3px color-mix(in oklch, var(--accent) 48%, transparent);
+      --motion-fast: 150ms;
+      --motion-base: 200ms;
+      --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+      --container-max: 1440px;
+      --container-gutter-desktop: 32px;
+      --container-gutter-tablet: 24px;
+      --container-gutter-phone: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: var(--leading-body);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    p { margin: 0; text-wrap: pretty; }
+    h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); text-wrap: balance; }
+    h1 { font-size: clamp(42px, 6.8vw, 72px); font-weight: 900; text-transform: none; max-width: 13ch; letter-spacing: -.055em; }
+    h2 { font-size: clamp(32px, 4.5vw, 58px); font-weight: 900; text-transform: none; max-width: 16ch; letter-spacing: -.045em; }
+    h3 { font-size: clamp(20px, 2vw, var(--text-2xl)); font-weight: 900; letter-spacing: -.02em; }
+    strong { font-weight: 700; color: inherit; }
+
+    .container { max-width: var(--container-max); margin-inline: auto; padding-inline: clamp(var(--container-gutter-phone), 3vw, var(--container-gutter-desktop)); }
+    .section { padding-block: clamp(var(--section-y-phone), 7vw, var(--section-y-desktop)); }
+    .section + .section { border-top: 1px solid var(--border-soft); }
+    .dark { background: linear-gradient(180deg, var(--bg), color-mix(in oklch, var(--surface) 58%, var(--bg))); color: var(--fg); border-top: 1px solid var(--border-soft); }
+    .surface { background: color-mix(in oklch, var(--surface) 78%, var(--bg)); }
+    .stack > * + * { margin-top: var(--space-5); }
+    .row { display: flex; align-items: center; gap: var(--space-5); }
+    .row-between { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(var(--space-6), 5vw, 88px); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+    .section-head { max-width: 780px; margin-bottom: var(--space-12); }
+    .section-head.center { text-align: center; margin-inline: auto; }
+    .section-head.center h2, .section-head.center .lead { margin-inline: auto; }
+    .lead { font-size: clamp(var(--text-base), 1.45vw, var(--text-xl)); line-height: 1.45; color: var(--muted); max-width: 64ch; }
+    .dark .lead, .dark .muted, .dark p { color: var(--muted); }
+    .muted { color: var(--muted); }
+    .meta { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+    .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+    .eyebrow { display: inline-flex; margin: 0 0 var(--space-5); padding: 7px 14px; border: 1px solid color-mix(in oklch, var(--accent) 58%, transparent); border-radius: var(--radius-pill); color: var(--accent); background: color-mix(in oklch, var(--accent) 10%, transparent); font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: .16em; text-transform: uppercase; }
+    .dark .eyebrow { color: var(--accent); }
+
+    .topnav { position: sticky; top: 0; z-index: 40; background: rgba(7,11,21,.92); color: var(--fg); border-bottom: 1px solid var(--border-soft); backdrop-filter: blur(16px); }
+    .topnav-inner { min-height: 76px; }
+    .brand { display: inline-flex; align-items: center; gap: var(--space-3); font-weight: 900; letter-spacing: .03em; text-transform: uppercase; }
+    .brand-mark { width: 54px; height: 54px; display: grid; place-items: center; border: 1px solid color-mix(in oklch, var(--accent) 58%, transparent); border-radius: var(--radius-md); color: var(--accent); font-family: var(--font-mono); font-size: var(--text-sm); background: color-mix(in oklch, var(--accent) 10%, transparent); }
+    .topnav-trust { display: flex; align-items: center; gap: var(--space-4); color: var(--muted); font-size: var(--text-sm); font-weight: 700; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 14px 24px; border: 1px solid transparent; border-radius: var(--radius-sm); font-size: var(--text-base); font-weight: 900; line-height: 1.2; transition: background var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard); }
+    .btn:active { transform: translateY(1px); }
+    .btn:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 0; box-shadow: var(--focus-ring); }
+    .btn-primary { background: var(--accent); color: var(--accent-on); border-color: var(--accent); box-shadow: 0 14px 34px color-mix(in oklch, var(--accent) 35%, transparent); }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .btn-outline { background: transparent; color: currentColor; border-color: currentColor; }
+    .btn-outline:hover { color: var(--accent); border-color: var(--accent); }
+    .btn-ghost { background: transparent; color: currentColor; border-color: transparent; padding-inline: 0; min-height: auto; }
+    .btn-ghost:hover { color: var(--accent); }
+
+    .hero { position: relative; overflow: hidden; min-height: calc(100svh - 76px); display: grid; align-items: center; background: radial-gradient(circle at 72% 50%, rgba(255,106,26,.18), transparent 34%), linear-gradient(180deg, var(--bg), var(--bg) 62%, color-mix(in oklch, var(--surface-warm) 52%, var(--bg))); color: var(--fg); padding-block: clamp(64px, 9vw, 132px); }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(0deg, transparent, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 96px 96px; pointer-events: none; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(320px, .98fr); gap: clamp(var(--space-8), 6vw, 96px); align-items: center; }
+    .hero-copy { max-width: 760px; }
+    .hero-mobile-eyebrow { display: none; }
+    .hero h1 { color: var(--fg); margin-bottom: var(--space-6); }
+    .hero-title-line { display: block; }
+    .hero-title-line + .hero-title-line { margin-top: .14em; }
+    .hero .lead { color: var(--fg-2); }
+    .hero-cta { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-8); }
+    .trust-line { margin-top: var(--space-4); color: var(--muted); font-size: var(--text-sm); line-height: 1.35; }
+    .expert-visual { min-height: 560px; border: 0; border-radius: 0; display: grid; grid-template-rows: 1fr; background: radial-gradient(circle at 52% 68%, rgba(255,106,26,.22), transparent 42%); box-shadow: none; overflow: hidden; position: relative; isolation: isolate; }
+    .expert-visual::before, .expert-portrait::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 58%, transparent 42%, var(--bg) 78%); pointer-events: none; z-index: 1; }
+    .expert-visual::after, .expert-portrait::after { content: ""; position: absolute; inset: auto 0 0; height: 34%; background: linear-gradient(180deg, transparent, var(--bg)); pointer-events: none; z-index: 2; }
+    .expert-photo { min-height: 430px; display: grid; place-items: center; position: relative; overflow: hidden; background: transparent; padding: 0; }
+    .expert-photo picture, .expert-portrait picture { width: 100%; height: 100%; display: block; }
+    .expert-photo img, .expert-portrait img { width: 100%; height: 100%; object-fit: contain; display: block; filter: saturate(.98) contrast(1.04); }
+    .expert-photo img { object-position: 50% 50%; }
+    .expert-caption { position: relative; z-index: 3; border-top: 0; padding: var(--space-5) 0 0; background: transparent; text-align: center; }
+    .expert-caption strong { display: block; font-size: var(--text-lg); color: var(--fg); }
+
+    .card { background: color-mix(in oklch, var(--surface) 88%, black); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(var(--space-5), 3vw, var(--space-8)); box-shadow: var(--elev-flat); }
+    .surface .card { background: color-mix(in oklch, var(--surface) 82%, var(--bg)); }
+    .dark .card { background: rgba(255,255,255,.045); border-color: var(--border); color: var(--fg); }
+    .authority-band { padding-block: var(--space-8); background: color-mix(in oklch, var(--surface) 86%, black); }
+    .authority-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .authority-item { background: rgba(255,255,255,.045); padding: var(--space-6); }
+    .authority-item strong { display: block; margin-top: var(--space-3); font-size: var(--text-lg); line-height: var(--leading-tight); }
+
+    .testimonial-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+    .quote { font-family: var(--font-display); font-size: clamp(22px, 2.1vw, 30px); line-height: var(--leading-tight); }
+    .quote-author { margin-top: var(--space-5); color: var(--muted); font-size: var(--text-sm); }
+    .quote-placeholder { border-style: dashed; }
+
+    .comparison { align-items: stretch; }
+    .stat-big { font-family: var(--font-display); font-size: clamp(70px, 10vw, 132px); font-weight: 300; line-height: .9; }
+    .accent-text { color: var(--accent); }
+    .check-list { list-style: none; margin: var(--space-6) 0 0; padding: 0; display: grid; gap: var(--space-3); }
+    .check-list li { display: grid; grid-template-columns: 18px 1fr; gap: var(--space-3); color: var(--muted); line-height: var(--leading-tight); }
+    .check-list li::before { content: "✓"; width: 18px; height: 18px; margin-top: -1px; color: var(--accent); font-family: var(--font-mono); font-weight: 900; line-height: 1; }
+    .dark .check-list li { color: color-mix(in oklch, var(--bg) 74%, transparent); }
+    .dark .check-list li::before { color: var(--accent); }
+    .signal-list { display: grid; gap: var(--space-3); }
+    .signal-item { display: grid; grid-template-columns: 42px 1fr; gap: var(--space-4); padding: var(--space-5); border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(255,255,255,.055); }
+    .signal-index { font-family: var(--font-mono); color: var(--accent); font-weight: 900; }
+    .thesis-box { border-left: 3px solid var(--accent); padding-left: var(--space-6); max-width: 860px; }
+    .thesis-inline { margin: 0 auto var(--space-12); padding: clamp(var(--space-5), 3vw, var(--space-8)); border: 1px solid color-mix(in oklch, var(--accent) 36%, transparent); border-left: 3px solid var(--accent); border-radius: var(--radius-lg); background: rgba(255,255,255,.045); }
+    .comparison-intro { margin-top: var(--space-12); margin-bottom: var(--space-8); }
+
+    .triad-wrap { display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr); gap: clamp(var(--space-8), 5vw, 88px); align-items: center; }
+    .triad-diagram { aspect-ratio: 1 / 1; display: grid; place-items: center; margin: 0; border: 1px solid var(--border); border-radius: var(--radius-lg); background: radial-gradient(circle at 50% 50%, rgba(255,106,26,.10), rgba(255,255,255,.035)); position: relative; overflow: hidden; isolation: isolate; }
+    .triad-diagram::before { content: ""; position: absolute; width: 40%; aspect-ratio: 1; left: 50%; top: 50%; transform: translate(-50%, -43%); border-radius: 50%; background: var(--accent); opacity: .95; z-index: 0; }
+    .triad-line { position: absolute; z-index: 0; background: var(--accent); opacity: .95; transform-origin: center; }
+    .triad-line.top { width: 3px; height: 18%; left: calc(50% - 1.5px); top: 24%; }
+    .triad-line.left { width: 3px; height: 25%; left: 36%; top: 59%; transform: rotate(38deg); }
+    .triad-line.right { width: 3px; height: 25%; right: 36%; top: 59%; transform: rotate(-38deg); }
+    .triad-core { position: absolute; z-index: 2; left: 50%; top: 50%; transform: translate(-50%, -38%); width: min(44%, 260px); min-height: 32%; display: grid; place-items: center; text-align: center; border: 2px solid var(--accent); border-radius: var(--radius-lg); background: color-mix(in oklch, var(--surface-warm) 84%, black); padding: clamp(var(--space-4), 2.2vw, var(--space-8)); box-shadow: 0 18px 48px rgba(0,0,0,.28); }
+    .triad-core .meta { color: var(--accent); letter-spacing: .22em; }
+    .triad-core strong { display: block; margin-top: var(--space-3); color: var(--fg); font-family: var(--font-display); font-size: clamp(28px, 4.6vw, 46px); line-height: .98; letter-spacing: -.035em; }
+    .triad-core span { display: block; margin-top: var(--space-4); color: var(--muted); font-size: clamp(var(--text-sm), 1.5vw, var(--text-lg)); line-height: 1.15; }
+    .triad-node { position: absolute; z-index: 1; width: 34%; min-height: 118px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: var(--radius-lg); background: color-mix(in oklch, var(--surface) 86%, black); padding: var(--space-5); text-align: center; box-shadow: 0 18px 42px rgba(0,0,0,.20); }
+    .triad-node strong { display: block; color: var(--fg); font-family: var(--font-display); font-size: clamp(24px, 3vw, 36px); line-height: 1; letter-spacing: -.035em; }
+    .triad-node span { display: block; margin-top: var(--space-3); color: var(--muted); font-size: clamp(var(--text-sm), 1.7vw, var(--text-lg)); line-height: 1.15; font-weight: 400; }
+    .triad-node.one { top: 6%; left: 33%; }
+    .triad-node.two { bottom: 8%; left: 5%; }
+    .triad-node.three { bottom: 8%; right: 5%; }
+    .triad-caption { position: absolute; z-index: 1; left: 50%; bottom: 3%; transform: translateX(-50%); width: min(86%, 520px); color: var(--muted); text-align: center; font-weight: 900; line-height: 1.15; }
+    .triad-diagram::before { display: none; }
+    .triad-map { position: relative; z-index: 2; width: 100%; height: auto; display: block; padding: clamp(12px, 2vw, 24px) clamp(12px, 2vw, 24px) 58px; }
+    .triad-map .triad-link { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; opacity: .72; vector-effect: non-scaling-stroke; }
+    .triad-map .triad-junction { fill: var(--accent); }
+    .triad-map .triad-node-shape { fill: var(--surface); stroke: var(--border); stroke-width: 2; }
+    .triad-map .triad-core-shape { fill: var(--surface-warm); stroke: var(--accent); stroke-width: 4; }
+    .triad-map .triad-kicker { fill: var(--accent); font-family: var(--font-mono); font-size: 15px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    .triad-map .triad-label { fill: var(--fg); font-family: var(--font-display); font-size: 28px; font-weight: 900; letter-spacing: -1px; }
+    .triad-map .triad-label-compact { font-size: 24px; }
+    .triad-map .triad-detail { fill: #c4ccda; font-family: var(--font-body); font-size: 15px; font-weight: 500; }
+    .triad-map .triad-core-label { fill: var(--fg); font-family: var(--font-display); font-size: 31px; font-weight: 900; letter-spacing: -1px; }
+    .triad-map .triad-core-detail { fill: #c4ccda; font-family: var(--font-body); font-size: 15px; font-weight: 500; }
+
+    .expert-card { display: grid; grid-template-columns: 1fr; gap: clamp(var(--space-6), 5vw, var(--space-12)); align-items: stretch; }
+    .expert-portrait { min-height: 640px; border: 0; border-radius: 0; background: radial-gradient(circle at 50% 72%, rgba(255,106,26,.20), transparent 44%); display: grid; place-items: center; overflow: hidden; position: relative; padding: 0; isolation: isolate; }
+    .expert-portrait img { object-position: 50% 50%; }
+    .expert-copy-wide { max-width: 980px; }
+
+    .principle-card { border: 1px solid color-mix(in oklch, var(--accent) 40%, transparent); border-radius: var(--radius-lg); padding: clamp(var(--space-5), 3vw, var(--space-8)); background: rgba(255,255,255,.045); }
+    .principle-card p:last-child { margin-top: var(--space-4); font-family: var(--font-display); font-size: clamp(22px, 2.2vw, 34px); line-height: var(--leading-tight); color: var(--fg); }
+    .credential-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3); margin-top: var(--space-6); }
+    .credential-grid article { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: var(--space-4); color: var(--muted); background: rgba(255,255,255,.045); }
+    .credential-grid h3 { margin-top: var(--space-2); font-size: var(--text-lg); color: var(--fg); }
+    .credential-grid p { margin-top: var(--space-3); font-size: var(--text-sm); line-height: 1.35; }
+
+    .audience-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: var(--space-6); }
+    .not-for { border: 1px solid color-mix(in oklch, var(--accent) 46%, transparent); border-radius: var(--radius-lg); padding: var(--space-8); align-self: start; background: color-mix(in oklch, var(--surface-warm) 70%, transparent); }
+    .before-after-table { width: 100%; border-collapse: collapse; }
+    .before-after-table th, .before-after-table td { padding: var(--space-5); border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    .before-after-table th { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+    .lesson-shell { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: var(--space-6); align-items: start; }
+    .lesson-tabs { display: grid; gap: var(--space-2); }
+    .lesson-tab { width: 100%; text-align: left; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(255,255,255,.045); padding: var(--space-4); color: var(--fg); }
+    .lesson-tab[aria-selected="true"] { border-color: var(--accent); box-shadow: var(--focus-ring); background: color-mix(in oklch, var(--accent) 12%, transparent); }
+    .lesson-panel { min-height: 360px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: rgba(255,255,255,.045); padding: clamp(var(--space-6), 4vw, var(--space-12)); }
+    .lesson-panel .meta { color: var(--accent); }
+
+    .delivery-carousel { margin-top: var(--space-12); }
+    .delivery-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-5); }
+    .delivery-card { min-height: 510px; border: 1px solid color-mix(in oklch, var(--accent) 28%, var(--border)); border-radius: var(--radius-lg); background: color-mix(in oklch, var(--surface) 86%, var(--bg)); overflow: hidden; display: grid; grid-template-rows: minmax(238px, 1fr) auto; box-shadow: var(--elev-flat); position: relative; }
+    .delivery-visual { min-height: 238px; position: relative; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 50% 80%, rgba(255,106,26,.20), transparent 38%), rgba(255,255,255,.035); }
+    .delivery-visual::after { content: ""; position: absolute; inset: auto 0 0; height: 52%; background: linear-gradient(180deg, transparent, color-mix(in oklch, var(--surface) 88%, var(--bg))); pointer-events: none; }
+    .delivery-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; display: block; filter: saturate(.98) contrast(1.04); }
+    [data-od-id="delivery-card-treinamento"] .delivery-visual img { object-position: 50% 52%; }
+    .delivery-visual .triade-img { width: 94%; height: 94%; object-fit: contain; object-position: center; padding: var(--space-3); }
+    .delivery-copy { padding: var(--space-5); display: grid; align-content: end; min-height: 230px; position: relative; z-index: 1; }
+    .delivery-copy h3 { margin-top: var(--space-3); font-size: clamp(22px, 2vw, 30px); line-height: 1.02; color: var(--fg); }
+    .delivery-copy p:not(.eyebrow):not(.delivery-logo) { margin-top: var(--space-3); color: var(--muted); line-height: 1.28; }
+    .delivery-logo { margin-top: var(--space-5); color: var(--accent); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .percent-composition { width: 100%; height: 100%; display: grid; grid-template-columns: 1fr .72fr; align-items: center; gap: var(--space-3); padding: var(--space-6); position: relative; z-index: 1; }
+    .percent-composition strong { display: block; font-family: var(--font-display); font-size: clamp(56px, 6vw, 86px); line-height: .86; color: var(--fg); }
+    .percent-composition strong:last-child { color: var(--accent); text-align: right; }
+    .percent-composition span { display: block; margin-top: var(--space-3); color: var(--muted); font-size: var(--text-xs); font-family: var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+    .trajectory-art { width: 82%; height: 64%; position: relative; z-index: 1; border-left: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .trajectory-art::before { content: ""; position: absolute; left: 8%; right: 4%; bottom: 18%; height: 42%; border-left: 3px solid var(--accent); border-top: 3px solid var(--accent); transform: skew(-24deg); transform-origin: left bottom; }
+    .trajectory-art i { position: absolute; width: 12px; height: 12px; border-radius: var(--radius-pill); background: var(--accent); box-shadow: 0 0 0 6px color-mix(in oklch, var(--accent) 20%, transparent); }
+    .trajectory-art i:nth-child(1) { left: 12%; bottom: 18%; }
+    .trajectory-art i:nth-child(2) { left: 44%; bottom: 38%; }
+    .trajectory-art i:nth-child(3) { right: 4%; top: 30%; }
+    .check-art { width: min(74%, 240px); min-height: 220px; position: relative; z-index: 1; border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(255,255,255,.055); padding: var(--space-6); display: grid; gap: var(--space-4); align-content: center; }
+    .check-art span { display: grid; grid-template-columns: 22px 1fr; gap: var(--space-3); align-items: center; color: var(--fg); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em; }
+    .check-art span::before { content: "✓"; color: var(--accent); font-weight: 900; }
+    .check-art span::after { content: ""; height: 1px; background: var(--border); }
+    .delivery-dots { display: none; }
+
+    .offer { background: radial-gradient(circle at 82% 50%, rgba(255,106,26,.16), transparent 34%), var(--bg); color: var(--fg); }
+    .offer-shell { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 440px); gap: clamp(var(--space-8), 6vw, 96px); align-items: center; }
+    .price { font-family: var(--font-display); font-size: clamp(76px, 10vw, 126px); line-height: .9; color: var(--accent); font-weight: 900; letter-spacing: -.06em; }
+    .strike { text-decoration: line-through; color: color-mix(in oklch, var(--bg) 58%, transparent); }
+    .checkout-card { border: 1px solid color-mix(in oklch, var(--accent) 35%, transparent); border-radius: var(--radius-lg); padding: var(--space-8); background: rgba(255,255,255,.045); box-shadow: var(--elev-raised); }
+    .guarantee-box { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(var(--space-6), 4vw, var(--space-12)); background: rgba(255,255,255,.045); }
+
+    .faq details { border-top: 1px solid var(--border); }
+    .faq details:last-child { border-bottom: 1px solid var(--border); }
+    .faq summary { list-style: none; cursor: pointer; padding: var(--space-5) 0; display: flex; justify-content: space-between; gap: var(--space-5); font-weight: 700; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--accent); font-family: var(--font-mono); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq .faq-body { padding: 0 0 var(--space-5); color: var(--muted); line-height: var(--leading-tight); max-width: 78ch; }
+    .final-cta { text-align: center; background: var(--fg); color: var(--bg); }
+    .final-cta .container { max-width: 840px; }
+    .final-cta h2, .final-cta .lead { margin-inline: auto; }
+    .final-cta .lead { margin-top: var(--space-5); }
+    .pagefoot { padding-block: var(--space-12); border-top: 1px solid var(--border); color: var(--muted); }
+    .mobile-sticky-cta { display: none; }
+
+    .section:not(.hero):not(.dark):not(.offer):not(.final-cta), .pagefoot { background: var(--bg); color: var(--fg); }
+    .section.surface { background: color-mix(in oklch, var(--surface) 82%, var(--bg)); }
+    .final-cta { background: radial-gradient(circle at 50% 0%, rgba(255,106,26,.16), transparent 36%), var(--bg); color: var(--fg); }
+    .before-after-table th, .before-after-table td, .faq details, .faq details:last-child { border-color: var(--border); }
+    .before-after-table th { color: var(--accent); }
+    .quote-placeholder { background: color-mix(in oklch, var(--surface) 72%, var(--bg)); }
+
+    @media (max-width: 1180px) {
+      .hero-grid, .triad-wrap, .offer-shell { grid-template-columns: 1fr; }
+      .hero-copy { text-align: center; margin-inline: auto; }
+      .hero-copy h1, .hero-copy .lead { margin-inline: auto; }
+      .hero-cta { justify-content: center; }
+      .expert-visual { order: -1; max-width: 740px; width: 100%; margin-inline: auto; min-height: 500px; }
+      .authority-grid, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .delivery-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+      .delivery-card { grid-column: span 2; }
+      .delivery-card:nth-child(4) { grid-column: 2 / span 2; }
+      .delivery-card:nth-child(5) { grid-column: 4 / span 2; }
+    }
+    @media (max-width: 920px) {
+      .topnav-trust { display: none; }
+      .grid-2, .grid-3, .testimonial-row, .audience-grid, .lesson-shell { grid-template-columns: 1fr; }
+      .credential-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .triad-diagram { min-height: 720px; aspect-ratio: auto; }
+      .expert-visual, .expert-portrait { min-height: 420px; }
+      .delivery-carousel { overflow: hidden; margin-inline: calc(var(--container-gutter-tablet) * -1); padding-inline: var(--container-gutter-tablet); }
+      .delivery-grid { display: flex; gap: var(--space-4); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--container-gutter-tablet); padding-bottom: var(--space-5); }
+      .delivery-grid::-webkit-scrollbar { display: none; }
+      .delivery-card { grid-column: auto; flex: 0 0 min(82vw, 380px); scroll-snap-align: start; min-height: 500px; }
+      .delivery-card:nth-child(4), .delivery-card:nth-child(5) { grid-column: auto; }
+      .delivery-dots { display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-3); }
+      .delivery-dot { width: 8px; height: 8px; border: 1px solid var(--accent); border-radius: var(--radius-pill); background: transparent; opacity: .58; }
+      .delivery-dot.is-active { background: var(--accent); opacity: 1; }
+    }
+
+    @media (max-width: 560px) {
+      body { padding-bottom: 76px; }
+      .topnav-inner { min-height: 64px; }
+      .brand-mark { width: 42px; height: 42px; }
+      .brand span:last-child { max-width: 126px; font-size: var(--text-xs); line-height: 1.05; }
+      .topnav .btn-primary { display: none; }
+      .btn, .hero-cta { width: 100%; }
+      .hero { min-height: auto; padding-block: 14px 36px; }
+      .hero-grid { gap: 6px; }
+      .hero-mobile-eyebrow { display: flex; order: -3; justify-content: center; text-align: center; width: min(100%, 344px); margin: 0 auto -4px; }
+
+      .hero-copy > .eyebrow { display: none; }
+      .hero-copy { order: -1; margin-top: -8px; }
+      h1 { font-size: clamp(23px, 6.7vw, 27px); max-width: 28ch; line-height: 1.06; letter-spacing: -.035em; margin-bottom: var(--space-4); }
+
+      .mobile-title-break { display: block; }
+      .hero .eyebrow { justify-content: center; text-align: center; width: fit-content; max-width: 100%; }
+      .hero .lead { font-size: clamp(15px, 4vw, 17px); line-height: 1.34; max-width: 34ch; margin-top: 0; }
+      h2 { font-size: clamp(28px, 8.5vw, 36px); }
+      .hero-copy { text-align: center; }
+      .trust-line { max-width: 32ch; margin: var(--space-3) auto 0; text-align: center; }
+      .authority-grid, .grid-4, .credential-grid { grid-template-columns: 1fr; }
+      .triad-diagram { min-height: 680px; padding: var(--space-3); overflow: hidden; }
+      .triad-diagram::before { width: 48%; transform: translate(-50%, -40%); }
+      .triad-line.top { height: 14%; top: 22%; }
+      .triad-line.left { height: 18%; left: 33%; top: 58%; transform: rotate(32deg); }
+      .triad-line.right { height: 18%; right: 33%; top: 58%; transform: rotate(-32deg); }
+      .triad-core { width: 68%; min-height: 25%; transform: translate(-50%, -34%); padding: var(--space-4); }
+      .triad-core .meta { font-size: 10px; letter-spacing: .18em; }
+      .triad-core strong { font-size: clamp(26px, 7.8vw, 34px); line-height: .96; }
+      .triad-core span { font-size: var(--text-sm); }
+      .triad-node { width: 42%; min-height: 112px; padding: var(--space-3); }
+      .triad-node.one { width: 64%; left: 18%; top: 5%; }
+      .triad-node.two { left: 5%; bottom: 12%; }
+      .triad-node.three { right: 5%; bottom: 12%; }
+      .triad-node strong { font-size: clamp(18px, 5.2vw, 23px); letter-spacing: -.03em; }
+      .triad-node span { font-size: clamp(12px, 3.4vw, 14px); line-height: 1.18; }
+      .triad-caption { bottom: 3%; font-size: 13px; width: min(92%, 320px); }
+      .expert-photo { min-height: 218px; }
+      .expert-visual { order: -2; width: min(86%, 320px); min-height: 228px; margin: 0 auto 8px; background: radial-gradient(circle at 52% 68%, rgba(255,106,26,.14), transparent 46%); }
+      .expert-visual::before { background: radial-gradient(circle at 50% 58%, transparent 38%, var(--bg) 76%); }
+      .expert-visual::after { height: 26%; }
+      .expert-photo img { object-position: 52% 50%; transform: scale(.96); transform-origin: center bottom; }
+      .expert-caption { display: none; }
+      .expert-portrait { min-height: 420px; }
+      .expert-portrait img { object-position: 52% 50%; }
+      #expert .section-head, #para-quem .section-head { text-align: center; margin-inline: auto; }
+      #expert .section-head h2, #para-quem .section-head h2 { margin-inline: auto; }
+      #para-quem .section-head { margin-bottom: var(--space-8); }
+      .before-after-table, .before-after-table tbody, .before-after-table tr, .before-after-table th, .before-after-table td { display: block; width: 100%; }
+      .before-after-table th { border-bottom: 0; padding-bottom: var(--space-2); }
+      .before-after-table td { padding-top: 0; }
+      .checkout-card, .card, .guarantee-box { padding: var(--space-5); }
+      .mobile-sticky-cta { position: fixed; z-index: 50; inset-inline: 0; bottom: 0; display: block; padding: var(--space-3) clamp(var(--container-gutter-phone), 3vw, var(--container-gutter-desktop)); background: rgba(7,11,21,.96); border-top: 1px solid var(--border-soft); }
+    }
+
+    /* Revisão final mobile-first */
+    [id] { scroll-margin-top: 84px; }
+    body, main, footer, .section-head, .hero-copy, .card, .authority-item, .signal-item, .principle-card, .credential-grid article, .not-for, .lesson-tab, .lesson-panel, .delivery-copy, .checkout-card, .guarantee-box, .faq, .footer-grid { text-align: center; }
+    h1, h2, h3, h4, .lead, .section-head, .thesis-box, .expert-copy-wide, .signals-close { margin-inline: auto; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-copy { width: 100%; max-width: 920px; margin-inline: auto; }
+    .hero-copy .expert-visual { width: min(100%, 760px); max-width: 760px; min-height: 0; margin: 28px auto; }
+    .hero-copy .expert-photo { min-height: 0; height: clamp(300px, 48vw, 560px); }
+    .hero-copy .expert-photo img { object-fit: cover; object-position: 50% 50%; }
+    .hero-cta, .row, .comparison-close, .section-cta, .delivery-controls { justify-content: center; }
+    .check-list li { grid-template-columns: 18px minmax(0, auto); justify-content: center; text-align: center; }
+    .signal-item { grid-template-columns: 42px minmax(0, auto); justify-content: center; }
+    .lesson-outcomes p, .before-after-table th, .before-after-table td, .faq summary, .faq .faq-body { text-align: center; }
+    .faq summary { position: relative; justify-content: center; padding-inline: 32px; }
+    .faq summary::after { position: absolute; right: 0; }
+    .footer-links { justify-content: center; }
+    .section { padding-block: clamp(40px, 5vw, 72px); }
+    .nav-cta-mobile, .delivery-hint { display: none; }
+    .hero-support { display: none; }
+    .comparison-close { margin-top: var(--space-8); text-align: center; display: grid; justify-items: center; gap: var(--space-5); }
+    .comparison-close p { font-size: var(--text-lg); font-weight: 700; }
+    .card-93 .check-list li::before, .negative-list li::before { content: "−"; color: var(--danger); }
+    .card-7 { border-color: color-mix(in oklch, var(--accent) 52%, var(--border)); box-shadow: 0 18px 54px color-mix(in oklch, var(--accent) 10%, transparent); }
+    .signals-close { grid-column: 1 / -1; max-width: 70ch; margin-top: var(--space-3); color: var(--fg-2); font-weight: 700; }
+    .triad-diagram::before { opacity: .18; }
+    .triad-line { z-index: 1; opacity: .82; }
+    .triad-core, .triad-node { z-index: 2; }
+    .lesson-outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-8); }
+    .lesson-outcomes p { padding: var(--space-5); border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(255,255,255,.035); }
+    .lesson-outcomes span, .lesson-outcomes strong { display: block; }
+    .lesson-outcomes strong { margin-top: var(--space-3); line-height: 1.35; }
+    .delivery-controls { display: flex; justify-content: flex-end; gap: var(--space-3); margin-top: var(--space-5); }
+    .delivery-controls button { width: 52px; height: 52px; border: 1px solid var(--accent); border-radius: var(--radius-sm); background: transparent; color: var(--accent); font-size: 22px; }
+    .section-cta { display: flex; justify-content: center; margin-top: var(--space-8); }
+    .full-price { margin-top: var(--space-5); color: var(--fg-2); font-size: var(--text-lg); }
+    .full-price .strike { color: var(--fg); font-size: var(--text-xl); font-weight: 900; text-decoration-thickness: 2px; text-decoration-color: var(--accent); }
+    .payment-note { margin-top: var(--space-3); color: var(--fg-2); font-weight: 700; }
+    .guarantee-seal { display: inline-flex; width: 96px; aspect-ratio: 1; align-items: center; justify-content: center; padding: var(--space-3); border: 2px solid var(--accent); border-radius: 50%; color: var(--accent); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 900; line-height: 1.15; text-align: center; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5) var(--space-8); line-height: 1.45; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--space-5); }
+    .footer-links a { color: var(--fg-2); text-decoration: underline; text-underline-offset: 4px; }
+    .mobile-sticky-cta { transform: translateY(120%); visibility: hidden; transition: transform var(--motion-base) var(--ease-standard), visibility var(--motion-base); }
+    .mobile-sticky-cta.is-visible { transform: translateY(0); visibility: visible; }
+    .mobile-sticky-cta.is-suppressed { transform: translateY(120%); visibility: hidden; }
+
+    @media (min-width: 1181px) {
+      .expert-card { grid-template-columns: minmax(360px, .82fr) minmax(0, 1.18fr); align-items: start; }
+      .expert-portrait { min-height: 560px; }
+      .credential-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .delivery-grid { display: flex; gap: var(--space-5); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+      .delivery-grid::-webkit-scrollbar { display: none; }
+      .delivery-card { flex: 0 0 calc((100% - 40px) / 3); min-width: 0; min-height: 500px; scroll-snap-align: start; }
+    }
+
+    @media (max-width: 920px) {
+      .section { padding-block: clamp(40px, 8vw, 64px); }
+      .section-head { margin-bottom: var(--space-8); }
+      .expert-card { gap: var(--space-8); }
+      .lesson-panel { min-height: 0; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 561px) and (max-width: 1180px) {
+      .hero-copy { order: 1; }
+      .expert-visual { order: 2; }
+    }
+
+    @media (max-width: 560px) {
+      html { scroll-padding-top: 0; }
+      body { font-size: 16px; padding-bottom: 0; overflow-x: clip; }
+      .topnav { display: none; }
+      [id] { scroll-margin-top: 16px; }
+      .container { padding-inline: 16px; }
+      .section { padding-block: 44px; }
+      .topnav-inner { min-height: 64px; gap: 10px; }
+      .brand { gap: 8px; min-width: 0; }
+      .brand-mark { width: 40px; height: 40px; flex: 0 0 40px; }
+      .brand span:last-child { display: none; }
+      .topnav .btn-primary { display: inline-flex; width: auto; min-height: 44px; padding: 11px 14px; white-space: nowrap; font-size: 14px; }
+      .nav-cta-desktop { display: none; }
+      .nav-cta-mobile { display: inline; }
+
+      .hero { min-height: auto; padding-block: 22px 34px; }
+      .hero-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
+      .hero-copy { order: 1; margin: 0 auto; text-align: center; }
+      .hero-copy > .eyebrow { display: inline-flex; margin-bottom: 14px; font-size: 10px; letter-spacing: .11em; padding: 6px 10px; }
+      .hero h1 { margin: 0 auto 16px; max-width: 100%; font-size: clamp(27px, 7.9vw, 33px); line-height: 1.04; letter-spacing: -.04em; text-wrap: balance; overflow-wrap: normal; }
+      .mobile-title-break { display: inline; }
+      .hero .lead { max-width: 100%; margin: 0; font-size: 16px; line-height: 1.35; }
+      .hero-lead-extra { display: none; }
+      .hero-cta { margin-top: 18px; }
+      .hero-cta .btn { width: 100%; min-height: 54px; padding-inline: 12px; white-space: nowrap; font-size: clamp(12px, 3.5vw, 15px); letter-spacing: -.01em; }
+      .trust-line { max-width: 100%; margin-top: 12px; font-size: 13px; line-height: 1.35; text-align: center; }
+      .hero-copy .expert-visual { order: 2; width: 100%; min-height: 0; margin: 12px auto; background: radial-gradient(circle at 52% 68%, rgba(255,106,26,.15), transparent 48%); }
+      .hero-copy .expert-photo { min-height: 0; height: clamp(240px, 68vw, 292px); }
+      .hero-copy .expert-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 43% 50%; transform: none; filter: none; image-rendering: auto; }
+      .expert-visual::after { height: 22%; }
+      .expert-caption { display: block; padding-top: 8px; text-align: center; }
+      .expert-caption strong { font-size: 18px; }
+      .expert-caption .muted { font-size: 14px; line-height: 1.35; }
+      .hero-support { display: none; }
+
+      h2 { max-width: 100%; font-size: clamp(30px, 9.5vw, 38px); line-height: 1.05; }
+      #expert [data-od-id="expert-title"],
+      #transformacao [data-od-id="transformation-title"] {
+        width: 100%;
+        max-width: none;
+        font-size: clamp(24px, 7.5vw, 30px);
+        line-height: 1.08;
+        letter-spacing: -.04em;
+        text-wrap: pretty;
+      }
+      h3 { font-size: clamp(20px, 6vw, 25px); }
+      .lead { font-size: 16px; line-height: 1.45; }
+      .eyebrow { max-width: 100%; white-space: normal; line-height: 1.3; }
+      .authority-band { padding-block: 22px; }
+      .authority-item { padding: 18px; }
+      .authority-item strong { font-size: 16px; }
+      .thesis-inline { margin-bottom: 28px; padding: 20px; }
+      .comparison-intro { margin-top: 26px; margin-bottom: 24px; }
+      .comparison { gap: 16px; }
+      .comparison-card { padding: 22px; }
+      .comparison-card .stat-big { font-size: 72px; }
+      .check-list { gap: 14px; }
+      .check-list li { font-size: 16px; line-height: 1.4; }
+      .comparison-close { margin-top: 24px; }
+      .comparison-close .btn { width: 100%; }
+      .signal-item { grid-template-columns: 34px 1fr; gap: 12px; padding: 18px; }
+      .signals-close { margin-top: 8px; font-size: 16px; line-height: 1.45; }
+
+      .triad-wrap { gap: 32px; }
+      .triad-diagram { display: flex; flex-direction: column; gap: 12px; min-height: 0; aspect-ratio: auto; padding: 18px; overflow: visible; }
+      .triad-diagram::before, .triad-line { display: none; }
+      .triad-map { order: 1; padding: 0 0 8px; }
+      .triad-map .triad-kicker, .triad-map .triad-detail, .triad-map .triad-core-detail { display: none; }
+      .triad-map .triad-label { font-size: 34px; }
+      .triad-map .triad-label-compact { font-size: 30px; }
+      .triad-map .triad-core-label { font-size: 35px; }
+      .triad-node, .triad-node.one, .triad-node.two, .triad-node.three { position: relative; inset: auto; width: 100%; min-height: 0; padding: 18px; order: 1; }
+      .triad-node.one { order: 1; }
+      .triad-node.two { order: 2; }
+      .triad-node.three { order: 3; }
+      .triad-node strong { font-size: 24px; }
+      .triad-node span { font-size: 14px; }
+      .triad-core { position: relative; inset: auto; transform: none; width: 100%; min-height: 0; order: 4; padding: 22px 18px; background: color-mix(in oklch, var(--surface-warm) 84%, black); }
+      .triad-core::before { content: ""; position: absolute; width: 76px; height: 76px; left: 50%; top: 50%; transform: translate(-50%,-50%); border-radius: 50%; background: var(--accent); opacity: .12; pointer-events: none; }
+      .triad-core strong { font-size: 30px; }
+      .triad-core span { font-size: 14px; }
+      .triad-caption { position: relative; inset: auto; transform: none; width: 100%; order: 5; margin-top: 4px; font-size: 14px; line-height: 1.4; }
+      #triade .grid-3 { gap: 12px !important; }
+      #triade .card { padding: 18px; }
+
+      .expert-portrait { min-height: 0; height: 390px; }
+      .expert-portrait img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+      .expert-copy-wide { max-width: 100%; }
+      .expert-copy-wide > p { font-size: 16px; line-height: 1.5; }
+      .principle-card { padding: 20px; }
+      .credential-grid { grid-template-columns: 1fr; gap: 12px; }
+      .credential-grid article { padding: 18px; }
+      #expert .btn { width: 100%; }
+      .audience-grid { gap: 24px; }
+      #para-quem .grid-2 { gap: 12px !important; }
+      #para-quem .card, .not-for { padding: 18px; }
+
+      .before-after-table thead { display: none; }
+      .before-after-table tbody { display: grid; gap: 14px; }
+      .before-after-table tr { display: grid; gap: 0; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+      .before-after-table td { display: grid; grid-template-columns: 58px 1fr; gap: 10px; width: 100%; padding: 16px; border: 0; font-size: 16px; line-height: 1.35; }
+      .before-after-table td:first-child::before { content: "Antes"; color: var(--muted); font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; }
+      .before-after-table td:last-child { border-top: 1px solid var(--border); color: var(--accent); font-weight: 700; background: color-mix(in oklch, var(--accent) 7%, transparent); }
+      .before-after-table td:last-child::before { content: "Depois"; color: var(--accent); font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; }
+
+      .lesson-shell { gap: 14px; }
+      .lesson-tabs { gap: 10px; }
+      .lesson-tab { min-height: 64px; padding: 16px; }
+      .lesson-panel { min-height: 0; padding: 20px; }
+      .lesson-outcomes { grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
+      .lesson-outcomes p { padding: 16px; }
+
+      .delivery-carousel { margin-top: 28px; margin-inline: -16px; padding-inline: 16px; }
+      .delivery-grid { gap: 14px; scroll-padding-inline: 16px; padding-right: 34px; }
+      .delivery-card { flex-basis: calc(100vw - 56px); min-height: 460px; grid-template-rows: 225px auto; }
+      .delivery-visual { min-height: 225px; }
+      .delivery-copy { min-height: 215px; padding: 20px; }
+      .delivery-copy h3 { font-size: 24px; }
+      .delivery-hint { display: block; margin-top: 10px; color: var(--muted); font-size: 14px; text-align: center; }
+      .delivery-controls { display: none; }
+      .section-cta .btn { width: 100%; }
+
+      .offer-shell { gap: 28px; }
+      .checkout-card { padding: 22px; }
+      .checkout-card .price { font-size: 78px; }
+      .checkout-card .btn { width: 100%; min-height: 54px; padding-inline: 10px; white-space: nowrap; font-size: 15px; }
+      .full-price { font-size: 16px; }
+      .guarantee-box { padding: 22px; }
+      .guarantee-box .grid-2 { gap: 24px; }
+      .faq summary { min-height: 60px; align-items: center; padding: 18px 0; font-size: 16px; line-height: 1.35; }
+      .faq .faq-body { font-size: 16px; line-height: 1.45; }
+      .final-cta .hero-cta { margin-top: 22px; }
+      .pagefoot { padding-block: 36px 100px; }
+      .footer-grid, .footer-links { display: grid; gap: 16px; }
+      .footer-grid { font-size: 14px; }
+      .mobile-sticky-cta { display: block; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); }
+      .mobile-sticky-cta .btn { width: 100%; min-height: 52px; }
+    }
+
+    @media (max-width: 340px) {
+      .topnav-inner { min-height: 60px; }
+      .hero { padding-block: 14px 28px; }
+      .hero-grid { gap: 12px; }
+      .hero-copy > .eyebrow { margin-bottom: 10px; }
+      .hero h1 { margin-bottom: 12px; font-size: 26px; }
+      .hero .lead { font-size: 15px; line-height: 1.28; }
+      .hero-cta { margin-top: 14px; }
+      .hero-cta .btn { min-height: 50px; }
+      .trust-line { margin-top: 8px; font-size: 12px; }
+      .topnav .btn-primary { padding-inline: 11px; font-size: 13px; }
+      .hero-copy > .eyebrow { font-size: 9px; }
+      .delivery-card { flex-basis: calc(100vw - 48px); }
+      .checkout-card .btn { font-size: 14px; }
+    }
+
+    /* Refinamento de hierarquia, ritmo e conversão */
+    .section { padding-block: clamp(38px, 4.8vw, 68px); }
+    .hero { padding-block: clamp(64px, 8vw, 120px); }
+    #expert, #oferta, #garantia, #decisao { padding-block: clamp(56px, 7vw, 96px); }
+    .card, .signal-item, .principle-card, .credential-grid article, .not-for, .lesson-panel, .delivery-card, .checkout-card, .guarantee-box {
+      border-radius: var(--radius-md);
+      border-width: 1px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.10);
+    }
+    .comparison-card { height: 100%; }
+    .card-93 { background: rgba(255,255,255,.96); border-color: rgba(7,11,21,.13); box-shadow: none; }
+    .card-7 { background: #ffffff; border-color: var(--accent); box-shadow: 0 14px 38px rgba(255,106,26,.12); }
+    .symbolic-note { margin: var(--space-5) auto 0; color: var(--meta); text-align: center; }
+    .lesson-tab strong { display: block; margin-top: 6px; font-size: var(--text-sm); line-height: 1.3; }
+    .lesson-copy-label { display: block; margin-top: var(--space-6); margin-bottom: var(--space-3); color: var(--accent); }
+    .checkout-card { border-color: var(--accent); background: rgba(255,255,255,.07); box-shadow: 0 24px 72px rgba(0,0,0,.32); }
+    .checkout-card .price { font-size: clamp(88px, 11vw, 138px); }
+    .checkout-card .btn { width: 100%; }
+    .guarantee-box { background: color-mix(in oklch, var(--accent) 7%, #ffffff); border-color: color-mix(in oklch, var(--accent) 28%, #e5e7eb); box-shadow: none; }
+    .faq summary { text-align: left; justify-content: space-between; }
+    .faq .faq-body { text-align: left; }
+
+    #comparacao, #transformacao, #por-dentro {
+      background: #eef1f5;
+      color: #070b15;
+    }
+    #triade, #para-quem, #valor, #garantia, #faq {
+      background: #ffffff;
+      color: #070b15;
+    }
+    #comparacao .lead, #comparacao .muted, #transformacao .lead, #por-dentro .lead,
+    #triade .lead, #triade .muted, #para-quem .muted, #valor .lead, #garantia p,
+    #faq .faq-body {
+      color: #4b5563;
+    }
+    #comparacao .thesis-inline, #comparacao .card, #transformacao tr,
+    #triade .card, #para-quem .card, #valor .card {
+      background: #ffffff;
+      border-color: #d7dce3;
+    }
+    #comparacao .meta, #transformacao th, #triade .meta, #para-quem .meta, #valor .meta,
+    #garantia .meta, #faq .meta { color: #5f6877; }
+    #comparacao .card-7 { border-color: var(--accent); }
+    #comparacao .card-93 .check-list li { color: #5f6877; }
+    #comparacao .card-7 .check-list li { color: #364152; }
+    #triade .triad-diagram { background: radial-gradient(circle at 50% 50%, rgba(255,106,26,.13), #111827); color: var(--fg); }
+    #triade .triad-node { background: #111827; }
+    #triade .triad-core { background: #211617; }
+    #triade .triad-caption, #triade .triad-node span, #triade .triad-core span { color: #c4ccda; }
+    #para-quem .not-for { background: color-mix(in oklch, var(--accent) 8%, #ffffff); border-color: color-mix(in oklch, var(--accent) 35%, #d7dce3); }
+    #para-quem .check-list li, #valor .check-list li { color: #4b5563; }
+    #por-dentro .delivery-card { color: var(--fg); background: #111827; }
+    #por-dentro .delivery-copy p:not(.eyebrow):not(.delivery-logo) { color: #c4ccda; }
+
+    @media (min-width: 1024px) {
+      .hero-grid { grid-template-columns: minmax(0, 1.04fr) minmax(420px, .96fr); gap: clamp(36px, 5vw, 76px); }
+      .hero-copy { max-width: 780px; margin: 0; text-align: left; }
+      .hero-copy h1, .hero-copy .lead { margin-inline: 0; }
+      .hero h1 { max-width: 18ch; font-size: clamp(42px, 4.7vw, 68px); }
+      .hero-cta { justify-content: flex-start; }
+      .hero-grid > .expert-visual { width: 100%; min-height: 0; height: clamp(500px, 46vw, 650px); margin: 0; }
+      .hero-grid > .expert-visual .expert-photo { min-height: 0; height: 100%; }
+      .hero-grid > .expert-visual img { object-fit: cover; object-position: 44% 50%; }
+    }
+
+    @media (min-width: 561px) and (max-width: 1180px) {
+      .hero-grid > .expert-visual { order: 2; max-width: 760px; margin: 0 auto; }
+    }
+
+    @media (max-width: 1023px) {
+      .hero-copy { display: contents; }
+      .hero-copy > .eyebrow { order: 1; justify-self: center; }
+      .hero-copy > h1 { order: 2; justify-self: center; }
+      .hero-grid > .expert-visual { order: 3; }
+      .hero-copy > .lead { order: 4; justify-self: center; }
+      .hero-copy > .hero-cta { order: 5; }
+      .hero-copy > .trust-line { order: 6; justify-self: center; }
+    }
+
+    @media (max-width: 560px) {
+      .section { padding-block: 38px; }
+      .hero { padding-block: 22px 34px; }
+      #expert, #oferta, #garantia, #decisao { padding-block: 50px; }
+      .hero-grid { gap: 18px; }
+      .hero-copy { order: 1; }
+      .hero-grid > .expert-visual {
+        order: 2;
+        width: 100%;
+        min-height: 0;
+        height: clamp(238px, 66vw, 290px);
+        margin: 0 auto;
+        background: radial-gradient(circle at 52% 68%, rgba(255,106,26,.15), transparent 48%);
+      }
+      .hero-grid > .expert-visual .expert-photo { min-height: 0; height: 100%; }
+      .hero-grid > .expert-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 43% 50%; transform: none; filter: none; }
+      .hero-copy > h1 { margin-bottom: 0; }
+      .hero .lead { text-align: left; line-height: 1.45; }
+      .hero-cta .btn { white-space: normal; font-size: 14px; line-height: 1.2; }
+      .trust-line { text-align: center; }
+      .section p:not(.eyebrow):not(.meta):not(.trust-line):not(.triad-caption),
+      .check-list, .card, .signal-item, .principle-card, .credential-grid article,
+      .not-for, .lesson-panel, .delivery-copy, .checkout-card, .guarantee-box,
+      .faq, .before-after-table td {
+        text-align: left;
+      }
+      .section-head, .section-head p, .section-head .lead, .section-head h2,
+      .comparison-close, .comparison-close p, .final-cta p, .final-cta h2,
+      .hero h1, .hero .eyebrow, .triad-caption {
+        text-align: center;
+      }
+      .check-list li { grid-template-columns: 18px 1fr; justify-content: stretch; text-align: left; }
+      .signal-item { grid-template-columns: 34px 1fr; justify-content: stretch; text-align: left; }
+      .lesson-tabs {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding: 3px 44px 8px 3px;
+      }
+      .lesson-tabs::-webkit-scrollbar { display: none; }
+      .lesson-tab {
+        flex: 0 0 calc(100% - 44px);
+        min-height: 82px;
+        scroll-snap-align: start;
+        text-align: left;
+      }
+      .lesson-tab[aria-selected="true"] { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent), var(--focus-ring); }
+      .lesson-outcomes p { text-align: left; }
+      .before-after-table td { grid-template-columns: 62px 1fr; }
+      .checkout-card .price { font-size: clamp(78px, 23vw, 96px); }
+      .checkout-card .btn { white-space: normal; line-height: 1.2; }
+      .guarantee-seal { margin-inline: 0; }
+      .faq summary { justify-content: space-between; padding-right: 34px; text-align: left; }
+      .faq summary::after { right: 0; }
+      .mobile-sticky-cta { padding-bottom: calc(10px + env(safe-area-inset-bottom)); }
+      .pagefoot { padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
+    }
+
+    .hero-grid > .expert-visual img {
+      filter: brightness(1.08) contrast(1.02) saturate(1.02);
+    }
+    .hero-grid > .expert-visual::before { opacity: .9; }
+    .hero-grid > .expert-visual::after { opacity: .92; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topnav" data-od-id="topnav">
+    <div class="container row-between topnav-inner">
+      <a class="brand" href="#hero" data-od-id="logo" aria-label="Desperte o Vendedor 7%">
+        <span class="brand-mark">7%</span>
+        <span>Desperte o Vendedor</span>
+      </a>
+      <div class="topnav-trust" data-od-id="topnav-trust"><strong>R$47</strong><span>Acesso imediato</span><span>Garantia de 7 dias</span></div>
+      <a class="btn btn-primary checkout-link" href="https://checkout.payt.com.br/e191862509d5523fe2c24aef969e94db" data-checkout-link data-od-id="nav-cta"><span class="nav-cta-desktop">COMEÇAR AGORA POR R$47</span><span class="nav-cta-mobile">COMEÇAR POR R$47</span></a>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="section hero" id="hero" data-od-id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-od-id="hero-eyebrow">SE VOCÊ NÃO CONDUZ A VENDA, O CLIENTE CONDUZ VOCÊ.</p>
+          <h1 data-od-id="hero-title"><span class="hero-title-line">Pare de vender no improviso.</span><span class="hero-title-line">Descubra o que precisa mudar para conduzir suas vendas como um profissional e se tornar um Vendedor 7%.</span></h1>
+          <p class="lead" data-od-id="hero-lead">Em 5 aulas práticas, identifique os hábitos que enfraquecem suas negociações e defina os primeiros ajustes para diagnosticar melhor, construir valor e conduzir cada próximo passo.</p>
+          <div class="hero-cta" data-od-id="hero-cta-row">
+            <a class="btn btn-primary checkout-link" href="https://checkout.payt.com.br/e191862509d5523fe2c24aef969e94db" data-checkout-link data-od-id="hero-cta">QUERO COMEÇAR AGORA POR R$47</a>
+          </div>
+          <p class="trust-line" data-od-id="hero-trust">Pagamento único • Acesso imediato • Garantia de 7 dias</p>
+        </div>
+        <aside class="expert-visual" aria-label="Foto de Daniel Pereira em apresentação" data-od-id="hero-expert-visual">
+          <div class="expert-photo" data-od-id="hero-expert-photo">
+            <picture>
+              <img src="image-25.png" alt="Daniel Pereira falando ao microfone durante uma apresentação" width="1672" height="941" loading="eager" decoding="async" fetchpriority="high" />
+            </picture>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section surface" id="comparacao" data-od-id="comparacao">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Amador ou profissional?</p>
+          <h2 data-od-id="thesis-title">A diferença aparece antes do fechamento.</h2>
+        </div>
+        <div class="thesis-box thesis-inline stack" data-od-id="thesis-copy">
+          <p><strong>Na metodologia Vendedor 7%, 93% e 7% representam simbolicamente duas formas de atuar. Não são uma estatística de mercado. De um lado está quem apresenta, passa o preço e espera. Do outro, quem diagnostica, constrói valor e conduz.</strong></p>
+          <p>Não é uma diferença de talento. É a diferença entre improvisar uma venda e assumir a responsabilidade de conduzi-la.</p>
+        </div>
+        <div class="section-head center comparison-intro">
+          <p class="eyebrow">93% versus 7%</p>
+          <h2 data-od-id="comparison-title">Duas formas de atuar na venda.</h2>
+        </div>
+        <div class="grid-2 comparison" data-od-id="comparison-cards">
+          <article class="card comparison-card card-93" data-od-id="card-93">
+            <p class="meta">Atuação reativa</p>
+            <div class="stat-big num" data-od-id="num-93">93%</div>
+            <h3>Apresenta, passa preço e espera</h3>
+            <p class="muted" style="margin-top: var(--space-2); font-weight: 700;">O cliente assume o controle da conversa.</p>
+            <ul class="check-list">
+              <li>Apresenta antes de entender o que o cliente precisa</li>
+              <li>Deixa o preço se tornar o centro da conversa</li>
+              <li>Oferece desconto antes de construir valor</li>
+              <li>Reage às objeções sem saber como avançar</li>
+              <li>Perde a venda sem saber onde ela perdeu força</li>
+            </ul>
+          </article>
+          <article class="card comparison-card card-7" data-od-id="card-7">
+            <p class="meta">Atuação profissional</p>
+            <div class="stat-big num accent-text" data-od-id="num-7">7%</div>
+            <h3>Diagnostica, constrói valor e conduz</h3>
+            <p class="muted" style="margin-top: var(--space-2); font-weight: 700;">O vendedor define o próximo passo.</p>
+            <ul class="check-list">
+              <li>Faz perguntas antes de apresentar a solução</li>
+              <li>Conecta o produto ao problema do cliente</li>
+              <li>Constrói valor antes de revelar o investimento</li>
+              <li>Trata objeções com clareza e segurança</li>
+              <li>Conduz a conversa para uma decisão ou próximo passo</li>
+            </ul>
+          </article>
+        </div>
+        <p class="meta symbolic-note">Perfis simbólicos da metodologia Vendedor 7%.</p>
+        <div class="comparison-close" data-od-id="comparison-close">
+          <p>Em qual dessas duas formas de vender você mais se reconhece hoje?</p>
+          <a class="btn btn-outline checkout-link" href="https://checkout.payt.com.br/e191862509d5523fe2c24aef969e94db" data-checkout-link data-od-id="comparison-cta">QUERO COMEÇAR A VENDER COMO PROFISSIONAL</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="sinais" data-od-id="sinais">
+      <div class="container grid-2">
+        <div class="section-head">
+          <p class="eyebrow">Os sinais do improviso</p>
+          <h2 data-od-id="signals-title">A venda não é perdida quando o cliente diz “não”. Ela começa a ser perdida muito antes.</h2>
+          <p class="lead" style="margin-top: var(--space-5);">Cada vez que você apresenta sem diagnosticar, fala de preço sem construir valor ou encerra a conversa sem definir o próximo passo, você entrega ao cliente o controle de uma venda que deveria estar conduzindo.</p>
+        </div>
+        <div class="signal-list" data-od-id="signals-list">
+          <article class="signal-item" data-od-id="signal-1"><span class="signal-index">01</span><p>Você apresenta o produto antes de entender o que realmente importa para o cliente.</p></article>
+          <article class="signal-item" data-od-id="signal-2"><span class="signal-index">02</span><p>O cliente pergunta o preço e toda a conversa passa a girar em torno dele.</p></article>
+          <article class="signal-item" data-od-id="signal-3"><span class="signal-index">03</span><p>Diante da objeção, você oferece desconto porque não sabe como recuperar o valor.</p></article>
+          <article class="signal-item" data-od-id="signal-4"><span class="signal-index">04</span><p>O atendimento termina sem decisão, sem compromisso e sem próximo passo definido.</p></article>
+        </div>
+        <p class="signals-close" data-od-id="signals-close">Se essas situações fazem parte da sua rotina, o problema não é falta de esforço. É continuar vendendo sem um método que mostre onde agir e o que corrigir.</p>
+      </div>
+    </section>
+
+
+    <section class="section surface" id="triade" data-od-id="triade">
+      <div class="container triad-wrap">
+        <figure class="triad-diagram" data-od-id="triad-diagram">
+          <svg class="triad-map" viewBox="0 0 720 620" role="img" aria-labelledby="triad-map-title triad-map-desc">
+            <title id="triad-map-title">Tríade da Performance Comercial</title>
+            <desc id="triad-map-desc">Produto, Comportamento e Competência convergem para a Performance Comercial.</desc>
+
+            <path class="triad-link" d="M360 160 L360 210" />
+            <path class="triad-link" d="M265 390 L210 430" />
+            <path class="triad-link" d="M455 390 L510 430" />
+            <circle class="triad-junction" cx="360" cy="210" r="7" />
+            <circle class="triad-junction" cx="265" cy="390" r="7" />
+            <circle class="triad-junction" cx="455" cy="390" r="7" />
+
+            <g aria-label="Pilar Produto">
+              <rect class="triad-node-shape" x="235" y="34" width="250" height="126" rx="18" />
+              <text class="triad-kicker" x="360" y="70" text-anchor="middle">PILAR 01</text>
+              <text class="triad-label" x="360" y="108" text-anchor="middle">Produto</text>
+              <text class="triad-detail" x="360" y="136" text-anchor="middle">O valor que você entrega</text>
+            </g>
+
+            <g aria-label="Resultado da Tríade">
+              <circle class="triad-core-shape" cx="360" cy="300" r="112" />
+              <text class="triad-kicker" x="360" y="258" text-anchor="middle">RESULTADO</text>
+              <text class="triad-core-label" x="360" y="298" text-anchor="middle">
+                <tspan x="360">Performance</tspan>
+                <tspan x="360" dy="34">Comercial</tspan>
+              </text>
+              <text class="triad-core-detail" x="360" y="362" text-anchor="middle">A força dos três pilares</text>
+            </g>
+
+            <g aria-label="Pilar Comportamento">
+              <rect class="triad-node-shape" x="24" y="430" width="300" height="132" rx="18" />
+              <text class="triad-kicker" x="174" y="468" text-anchor="middle">PILAR 02</text>
+              <text class="triad-label triad-label-compact" x="174" y="506" text-anchor="middle">Comportamento</text>
+              <text class="triad-detail" x="174" y="536" text-anchor="middle">A postura que você assume</text>
+            </g>
+
+            <g aria-label="Pilar Competência">
+              <rect class="triad-node-shape" x="396" y="430" width="300" height="132" rx="18" />
+              <text class="triad-kicker" x="546" y="468" text-anchor="middle">PILAR 03</text>
+              <text class="triad-label triad-label-compact" x="546" y="506" text-anchor="middle">Competência</text>
+              <text class="triad-detail" x="546" y="536" text-anchor="middle">A capacidade de conduzir</text>
+            </g>
+          </svg>
+          <figcaption class="triad-caption">Quando um pilar enfraquece, toda a venda perde força.</figcaption>
+        </figure>
+        <div class="section-head" style="margin-bottom: 0;">
+          <p class="eyebrow">Tríade da Performance</p>
+          <h2 data-od-id="triad-title">Sua venda é tão forte quanto o pilar que você menos desenvolveu.</h2>
+          <p class="lead" style="margin-top: var(--space-5);">O Desperte ajuda você a analisar Produto, Comportamento e Competência para identificar qual fundamento está limitando sua atuação e o que precisa ser fortalecido primeiro.</p>
+          <div class="grid-3" style="margin-top: var(--space-8); gap: var(--space-4);">
+            <article class="card" data-od-id="triad-produto"><p class="meta">01</p><h3>Produto</h3><p class="muted">Dominar o que você vende, traduzir características em benefícios e mostrar por que sua solução merece ser escolhida.</p></article>
+            <article class="card" data-od-id="triad-comportamento"><p class="meta">02</p><h3>Comportamento</h3><p class="muted">Assumir responsabilidade pela condução, manter postura diante das objeções e parar de depender da iniciativa do cliente.</p></article>
+            <article class="card" data-od-id="triad-competencia"><p class="meta">03</p><h3>Competência</h3><p class="muted">Desenvolver diagnóstico, comunicação, construção de valor, negociação e condução para o próximo passo.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="expert" data-od-id="expert">
+      <div class="container expert-card">
+        <div class="expert-portrait" data-od-id="expert-photo">
+          <picture>
+            <source media="(max-width: 560px)" srcset="ChatGPT-Image-16-de-jul.-de-2026_-09_29_19-1.png" />
+            <img src="ChatGPT-Image-16-de-jul.-de-2026_-09_29_19-1.png" alt="Daniel Pereira em apresentação profissional do Vendedor 7%" width="1024" height="1014" loading="lazy" decoding="async" />
+          </picture>
+        </div>
+        <div class="stack expert-copy-wide" data-od-id="expert-copy">
+          <div>
+            <p class="eyebrow">Quem criou a metodologia</p>
+            <h2 data-od-id="expert-title">Daniel Pereira é o estrategista por trás do Vendedor 7%.</h2>
+          </div>
+          <p>Daniel Pereira é estrategista de negócios e está à frente da Negócios Fora da Curva.</p>
+          <p>Ao trabalhar com empresas e equipes comerciais, observou que muitos vendedores dominam o produto, mas ainda entregam ao cliente o controle da decisão.</p>
+          <p>Dessa observação nasceu a metodologia Vendedor 7%, estruturada em Produto, Comportamento e Competência. O Desperte ajuda a reconhecer a atuação atual e definir o primeiro ajuste.</p>
+          <div class="principle-card" data-od-id="expert-principle">
+            <p class="meta">Princípio do Vendedor 7%</p>
+            <p>Vendedor profissional não depende de frase pronta. Ele entende, constrói valor e conduz.</p>
+          </div>
+          <div class="credential-grid" data-od-id="expert-credentials">
+            <article data-od-id="credential-strategy"><h3>Estratégia comercial</h3><p>Identificação dos gargalos que enfraquecem a atuação de vendedores e equipes.</p></article>
+            <article data-od-id="credential-nfc"><h3>Negócios Fora da Curva</h3><p>Escola de negócios com atuação em vendas, liderança, gestão e oratória.</p></article>
+            <article data-od-id="credential-practice"><h3>Atuação prática</h3><p>Experiência em consultorias, treinamentos, mentorias, palestras e eventos empresariais.</p></article>
+            <article data-od-id="credential-method"><h3>Metodologia Vendedor 7%</h3><p>Um método para diferenciar quem apenas atende de quem entende, gera valor e conduz.</p></article>
+          </div>
+          <div><a class="btn btn-primary checkout-link" href="https://checkout.payt.com.br/e191862509d5523fe2c24aef969e94db" data-checkout-link data-od-id="expert-cta">QUERO DESPERTAR O VENDEDOR 7%</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="para-quem" data-od-id="para-quem">
+      <div class="container audience-grid">
+        <div>
+          <div class="section-head">
+            <p class="eyebrow">Para quem é</p>
+            <h2 data-od-id="audience-title" style="font-size: clamp(28px, 3.8vw, 46px);">O Desperte foi criado para você que:</h2>
+          </div>
+          <div class="grid-2" style="gap: var(--space-4);" data-od-id="audience-list">
+            <article class="card">É vendedor iniciante ou experiente e percebe que ainda reage ao cliente em vez de conduzir.</article>
+            <article class="card">É profissional autônomo ou empreendedor e precisa vender os próprios serviços com mais clareza.</article>
+            <article class="card">Vende presencialmente ou pelo WhatsApp e quer combinar um próximo passo com segurança.</article>
+            <article class="card">Precisa defender melhor o valor da própria oferta antes de falar de preço.</article>
+          </div>
+        </div>
+        <aside class="not-for" data-od-id="not-for">
+          <p class="meta">Este treinamento não é para quem:</p>
+          <ul class="check-list negative-list" style="margin-top: var(--space-5);">
+            <li>Procura truques ou frases mágicas para manipular clientes.</li>
+            <li>Quer pressionar pessoas em vez de conduzir decisões.</li>
+            <li>Não pretende assistir às aulas nem aplicar os exercícios.</li>
+            <li>Busca resultado sem assumir responsabilidade pela própria atuação.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section surface" id="transformacao" data-od-id="transformacao">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">A mudança na prática</p>
+          <h2 data-od-id="transformation-title">Você não sai com frases decoradas. Sai sabendo o que precisa corrigir na sua forma de vender.</h2>
+        </div>
+        <table class="before-after-table" data-od-id="before-after-table">
+          <thead><tr><th>Antes do Desperte</th><th>Depois do Desperte</th></tr></thead>
+          <tbody>
+            <tr><td>Apresenta antes de entender</td><td>Aprende a diagnosticar antes de oferecer</td></tr>
+            <tr><td>Passa o preço e espera</td><td>Constrói valor antes de falar do investimento</td></tr>
+            <tr><td>Improvisa diante da objeção</td><td>Identifica qual fundamento precisa fortalecer</td></tr>
+            <tr><td>Termina sem próximo passo</td><td>Aprende a conduzir a continuidade da conversa</td></tr>
+            <tr><td>Perde a venda sem entender</td><td>Analisa em qual etapa a venda perdeu força</td></tr>
+          </tbody>
+        </table>
+        <p class="lead" style="margin: var(--space-8) auto 0; text-align: center;">O objetivo do Desperte é fazer você enxergar sua atuação com clareza e sair com uma direção prática para começar a vender de forma mais consciente, estruturada e profissional.</p>
+      </div>
+    </section>
+
+    <section class="section" id="aulas" data-od-id="aulas">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Cinco aulas práticas</p>
+          <h2 data-od-id="lessons-title">Cinco aulas para descobrir onde sua venda perde força e o que corrigir primeiro.</h2>
+          <p class="lead" style="margin-top: var(--space-5);">Uma jornada direta para confrontar sua atuação atual, entender os três pilares da venda profissional e transformar percepção em um primeiro plano de ação.</p>
+        </div>
+        <div class="lesson-shell" data-od-id="lesson-shell">
+          <div class="lesson-tabs" role="tablist" aria-label="Aulas do treinamento">
+            <button type="button" class="lesson-tab" id="tab-aula-1" role="tab" aria-selected="true" aria-controls="panel-aula" tabindex="0" data-lesson="0" data-od-id="lesson-tab-1">Aula 1<br /><strong>Amador ou profissional: como você vende?</strong></button>
+            <button type="button" class="lesson-tab" id="tab-aula-2" role="tab" aria-selected="false" aria-controls="panel-aula" tabindex="-1" data-lesson="1" data-od-id="lesson-tab-2">Aula 2<br /><strong>Os dois níveis do Vendedor 7%</strong></button>
+            <button type="button" class="lesson-tab" id="tab-aula-3" role="tab" aria-selected="false" aria-controls="panel-aula" tabindex="-1" data-lesson="2" data-od-id="lesson-tab-3">Aula 3<br /><strong>O pilar que enfraquece sua venda</strong></button>
+            <button type="button" class="lesson-tab" id="tab-aula-4" role="tab" aria-selected="false" aria-controls="panel-aula" tabindex="-1" data-lesson="3" data-od-id="lesson-tab-4">Aula 4<br /><strong>Esforço não é performance</strong></button>
+            <button type="button" class="lesson-tab" id="tab-aula-5" role="tab" aria-selected="false" aria-controls="panel-aula" tabindex="-1" data-lesson="4" data-od-id="lesson-tab-5">Aula 5<br /><strong>Seu primeiro plano de evolução comercial</strong></button>
+          </div>
+          <article class="lesson-panel" id="panel-aula" role="tabpanel" aria-labelledby="tab-aula-1" data-od-id="lesson-panel">
+            <p class="meta" id="lesson-kicker">Aula 01</p>
+            <h3 id="lesson-title" style="margin-top: var(--space-4);">Amador ou profissional: como você vende?</h3>
+            <span class="meta lesson-copy-label">O que você vai entender</span>
+            <p class="lead" id="lesson-copy" style="margin-top: var(--space-5);">Reconheça se você está realmente conduzindo decisões ou apenas atendendo, apresentando e esperando.</p>
+            <div class="lesson-outcomes">
+              <p><span class="meta">O que você conseguirá aplicar</span><strong id="lesson-result">Identificar os hábitos que entregam ao cliente o controle da venda.</strong></p>
+              <p><span class="meta">Exercício</span><strong id="lesson-exercise">Mapear como você atende, apresenta, fala de preço e define o próximo passo.</strong></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface" id="por-dentro" data-od-id="por-dentro">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Tudo o que você recebe</p>
+          <h2 data-od-id="inside-title">Entre hoje e receba o treinamento completo para começar sua mudança como vendedor.</h2>
+          <p class="lead" style="margin-top: var(--space-5);">Você recebe 5 aulas e materiais de aplicação para identificar sua forma atual de vender, encontrar o pilar que precisa de atenção e definir seu próximo passo.</p>
+        </div>
+        <div class="delivery-carousel" data-od-id="delivery-carousel" aria-label="Conteúdos e materiais recebidos">
+          <div class="delivery-grid" data-delivery-track data-od-id="delivery-grid">
+            <article class="delivery-card" data-od-id="delivery-card-treinamento">
+              <figure class="delivery-visual">
+                <img src="image-31.png" alt="Identidade visual do treinamento Desperte o Vendedor 7%" width="1600" height="1600" loading="lazy" decoding="async" />
+              </figure>
+              <div class="delivery-copy">
+                <p class="eyebrow">Treinamento completo</p>
+                <h3>Desperte o Vendedor 7%</h3>
+                <p>5 aulas práticas para parar de apenas atender e começar a conduzir.</p>
+                <p class="delivery-logo">Vendedor 7%</p>
+              </div>
+            </article>
+            <article class="delivery-card" data-od-id="delivery-card-mapa">
+              <figure class="delivery-visual" aria-label="Composição visual dos percentuais 93% e 7%">
+                <div class="percent-composition" aria-hidden="true">
+                  <div><strong>93%</strong><span>Atuação reativa</span></div>
+                  <div><strong>7%</strong><span>Atuação profissional</span></div>
+                </div>
+              </figure>
+              <div class="delivery-copy">
+                <p class="eyebrow">Mapa de atuação</p>
+                <h3>93% e 7%</h3>
+                <p>Compare sua postura atual com a atuação de um Vendedor 7%.</p>
+                <p class="delivery-logo">Vendedor 7%</p>
+              </div>
+            </article>
+            <article class="delivery-card" data-od-id="delivery-card-triade">
+              <figure class="delivery-visual">
+                <img class="triade-img" src="image-7.png" alt="Gráfico da Tríade da Performance com Produto, Comportamento e Competência" width="1080" height="1080" loading="lazy" decoding="async" />
+              </figure>
+              <div class="delivery-copy">
+                <p class="eyebrow">Diagnóstico dos pilares</p>
+                <h3>Tríade da Performance</h3>
+                <p>Identifique se Produto, Comportamento ou Competência limita sua venda.</p>
+                <p class="delivery-logo">Vendedor 7%</p>
+              </div>
+            </article>
+            <article class="delivery-card" data-od-id="delivery-card-linha-da-vida">
+              <figure class="delivery-visual" aria-label="Representação de trajetória profissional em evolução">
+                <div class="trajectory-art" aria-hidden="true"><i></i><i></i><i></i></div>
+              </figure>
+              <div class="delivery-copy">
+                <p class="eyebrow">Exercício de clareza</p>
+                <h3>Linha da Vida Comercial</h3>
+                <p>Reconheça padrões da sua trajetória e defina o primeiro passo da mudança.</p>
+                <p class="delivery-logo">Vendedor 7%</p>
+              </div>
+            </article>
+            <article class="delivery-card" data-od-id="delivery-card-checklist">
+              <figure class="delivery-visual" aria-label="Documento profissional com lista de verificação">
+                <div class="check-art" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              </figure>
+              <div class="delivery-copy">
+                <p class="eyebrow">Material de aplicação</p>
+                <h3>Checklist do Vendedor Profissional</h3>
+                <p>Encontre os sinais de improviso que ainda aparecem na sua rotina comercial.</p>
+                <p class="delivery-logo">Vendedor 7%</p>
+              </div>
+            </article>
+          </div>
+          <div class="delivery-dots" aria-hidden="true" data-delivery-dots>
+            <span class="delivery-dot is-active"></span><span class="delivery-dot"></span><span class="delivery-dot"></span><span class="delivery-dot"></span><span class="delivery-dot"></span>
+          </div>
+          <p class="delivery-hint">Deslize para ver todos os materiais</p>
+          <div class="delivery-controls" aria-label="Navegação dos materiais">
+            <button type="button" data-delivery-prev aria-label="Material anterior">←</button>
+            <button type="button" data-delivery-next aria-label="Próximo material">→</button>
+          </div>
+        </div>
+        <div class="section-cta"><a class="btn btn-primary checkout-link" href="https://checkout.payt.com.br/e191862509d5523fe2c24aef969e94db" data-checkout-link data-od-id="delivery-cta">QUERO RECEBER O TREINAMENTO E OS MATERIAIS</a></div>
+      </div>
+    </section>
+
+
+    <section class="section surface" id="valor" data-od-id="valor">
+      <div class="container grid-2">
+        <div class="section-head">
+          <p class="eyebrow">O custo de continuar no improviso</p>
+          <h2 data-od-id="value-title">Quanto custa perder mais uma venda sem saber onde você errou?</h2>
+          <p class="lead" style="margin-top: var(--space-5);">Se uma única venda sua vale mais que R$47, identificar o comportamento que faz você perdê-la já pode justificar todo o investimento no Desperte.</p>
+        </div>
+        <div class="card" data-od-id="value-list">
+          <p class="meta">Seu acesso inclui</p>
+          <ul class="check-list">
+            <li>Treinamento completo com cinco aulas práticas</li>
+            <li>Mapa comparativo dos dois níveis de atuação</li>
+            <li>Diagnóstico pela Tríade da Performance</li>
+            <li>Exercício da Linha da Vida Comercial</li>
+            <li>Checklist do Vendedor Profissional</li>
+            <li>Acesso imediato ao conteúdo</li>
+            <li>Garantia de sete dias</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section offer" id="oferta" data-od-id="oferta">
+      <div class="container offer-shell">
+        <div>
+          <p class="eyebrow">Seu primeiro passo para vender como profissional</p>
+          <h2 data-od-id="offer-title">Por R$47, descubra onde sua venda trava antes de perder o próximo cliente.</h2>
+          <p class="lead" style="margin-top: var(--space-5);">O Desperte o Vendedor 7% é uma jornada prática de 5 aulas para você confrontar sua atuação atual, identificar o pilar que precisa fortalecer e sair com uma direção clara para começar a conduzir vendas de forma mais profissional.</p>
+        </div>
+        <aside class="checkout-card" data-od-id="offer-card">
+          <p class="meta">Desperte o Vendedor 7% com 5 aulas e materiais de aplicação.</p>
+          <p class="meta" style="margin-top: var(--space-5);">Hoje, em pagamento único:</p>
+          <div class="price num" data-od-id="offer-price">R$47</div>
+          <p class="payment-note">Pagamento único. Sem mensalidade.</p>
+          <a class="btn btn-primary checkout-link" href="https://checkout.payt.com.br/e191862509d5523fe2c24aef969e94db" data-checkout-link data-od-id="offer-cta" style="margin-top: var(--space-8);">QUERO ACESSAR AGORA POR R$47</a>
+          <p class="trust-line">Pagamento único • Acesso imediato • Garantia de 7 dias</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="garantia" data-od-id="garantia">
+      <div class="container guarantee-box">
+        <div class="grid-2">
+          <div>
+            <p class="eyebrow">Garantia de 7 dias</p>
+            <h2 data-od-id="guarantee-title">Entre, assista e decida com 7 dias de garantia.</h2>
+          </div>
+          <div class="stack" data-od-id="guarantee-copy">
+            <span class="guarantee-seal">7 DIAS DE GARANTIA</span>
+            <p>Após a confirmação da compra, você recebe acesso imediato ao treinamento. Assista às aulas, conheça a metodologia e avalie se o conteúdo faz sentido para o seu momento profissional.</p>
+            <p>Se dentro de 7 dias você entender que o Desperte o Vendedor 7% não é para você, solicite o reembolso pelo canal de suporte dentro desse prazo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface" id="faq" data-od-id="faq">
+      <div class="container grid-2">
+        <div class="section-head">
+          <p class="eyebrow">Perguntas frequentes</p>
+          <h2 data-od-id="faq-title">Tire suas últimas dúvidas antes de começar.</h2>
+        </div>
+        <div class="faq" data-od-id="faq-list">
+          <details data-od-id="faq-1"><summary>O Desperte serve para vendedores iniciantes e experientes?</summary><div class="faq-body">Sim. O conteúdo serve tanto para quem está começando quanto para quem já vende há anos, mas percebe que ainda apresenta, passa preço e espera sem um método claro de condução.</div></details>
+          <details data-od-id="faq-2"><summary>Posso aplicar o conteúdo em vendas presenciais e pelo WhatsApp?</summary><div class="faq-body">Sim. O treinamento trabalha fundamentos como diagnóstico, construção de valor, postura e condução. Esses princípios podem ser aplicados em diferentes canais e contextos de venda.</div></details>
+          <details data-od-id="faq-3"><summary>Como recebo o acesso ao treinamento?</summary><div class="faq-body">Após a confirmação da compra, o acesso é liberado para você começar. As aulas podem ser assistidas no seu ritmo.</div></details>
+          <details data-od-id="faq-4"><summary>Como funciona a garantia de 7 dias?</summary><div class="faq-body">Você pode conhecer o treinamento e, se entender que ele não é para você, solicitar o reembolso pelo canal de suporte dentro dos 7 dias previstos na garantia.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta" id="decisao" data-od-id="final-cta">
+      <div class="container">
+        <p class="eyebrow">A decisão agora é sua</p>
+        <h2 data-od-id="final-cta-title">Você pode continuar apresentando e esperando. Ou pode começar a conduzir como um Vendedor 7%.</h2>
+        <p class="lead" data-od-id="final-cta-copy">Por R$47, identifique onde sua venda perde força e dê o primeiro passo para substituir improviso por método, valor e direção.</p>
+        <div class="hero-cta" style="justify-content: center;" data-od-id="final-cta-row">
+          <a class="btn btn-primary checkout-link" href="https://checkout.payt.com.br/e191862509d5523fe2c24aef969e94db" data-checkout-link data-od-id="final-cta-button">QUERO COMEÇAR AGORA POR R$47</a>
+        </div>
+        <p class="trust-line">Pagamento único • Acesso imediato • Garantia de 7 dias</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pagefoot" data-od-id="footer">
+    <div class="container footer-grid">
+      <nav class="footer-links" aria-label="Informações legais">
+        <span data-od-id="footer-terms">Termos de uso</span>
+        <span data-od-id="footer-privacy">Política de privacidade</span>
+        <span data-od-id="footer-contact">Suporte</span>
+      </nav>
+      <p>Desperte o Vendedor 7% • Daniel Pereira</p>
+      <p>Os resultados variam conforme a experiência, o contexto e a aplicação de cada aluno.</p>
+      <span>© 2026 Desperte o Vendedor 7%</span>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky-cta" data-od-id="mobile-sticky-cta">
+    <a class="btn btn-primary checkout-link" href="https://checkout.payt.com.br/e191862509d5523fe2c24aef969e94db" data-checkout-link>COMEÇAR AGORA POR R$47</a>
+  </div>
+
+  <script>
+    (function () {
+      var checkoutUrl = 'https://checkout.payt.com.br/e191862509d5523fe2c24aef969e94db';
+      var checkoutLinks = document.querySelectorAll('[data-checkout-link]');
+      var faq = document.querySelectorAll('.faq details');
+      var tabs = document.querySelectorAll('[data-lesson]');
+      var lessonData = [
+        { kicker: 'Aula 01', title: 'Amador ou profissional: como você vende?', copy: 'Reconheça se você está realmente conduzindo decisões ou apenas atendendo, apresentando e esperando.', result: 'Identificar os hábitos que entregam ao cliente o controle da venda.', exercise: 'Mapear como você atende, apresenta, fala de preço e define o próximo passo.' },
+        { kicker: 'Aula 02', title: 'Os dois níveis do Vendedor 7%', copy: 'Compare a atuação reativa dos 93% com a postura consciente e profissional representada pelos 7%.', result: 'Reconhecer em qual nível de atuação seus comportamentos estão hoje.', exercise: 'Comparar sua postura atual com os dois perfis simbólicos da metodologia.' },
+        { kicker: 'Aula 03', title: 'O pilar que enfraquece sua venda', copy: 'Analise Produto, Comportamento e Competência para entender por que esforço nem sempre se transforma em resultado.', result: 'Identificar qual dos três pilares precisa ser fortalecido primeiro.', exercise: 'Registrar evidências de força e fragilidade em cada pilar da sua atuação.' },
+        { kicker: 'Aula 04', title: 'Esforço não é performance', copy: 'Aprenda a separar movimento, esforço, resultado e evolução para avaliar sua rotina comercial com mais clareza.', result: 'Parar de confundir uma agenda cheia com uma atuação comercial eficiente.', exercise: 'Revisar uma semana de atividades e separar esforço realizado de resultado produzido.' },
+        { kicker: 'Aula 05', title: 'Seu primeiro plano de evolução comercial', copy: 'Use a Linha da Vida Comercial para reconhecer padrões da sua trajetória e definir o próximo passo.', result: 'Sair com uma direção prática para começar a fortalecer sua atuação.', exercise: 'Organizar os marcos da sua trajetória e escolher a primeira mudança que precisa ser aplicada.' }
+      ];
+
+      checkoutLinks.forEach(function (link) {
+        var destination = checkoutUrl;
+        if (checkoutUrl.charAt(0) !== '#') {
+          var sourceParams = new URLSearchParams(window.location.search);
+          var targetUrl = new URL(checkoutUrl, window.location.href);
+          ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'].forEach(function (key) {
+            if (sourceParams.has(key)) targetUrl.searchParams.set(key, sourceParams.get(key));
+          });
+          destination = targetUrl.toString();
+        }
+        link.setAttribute('href', destination);
+        if (checkoutUrl.charAt(0) !== '#') {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener');
+        }
+        link.addEventListener('click', function () {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: checkoutUrl.charAt(0) === '#' ? 'cta_click' : 'begin_checkout', product: 'desperte-o-vendedor-7', price: 47, source: link.getAttribute('data-od-id') || 'sticky-mobile' });
+        });
+      });
+
+      faq.forEach(function (item) {
+        item.addEventListener('toggle', function () {
+          if (!item.open) return;
+          if (window.matchMedia('(max-width: 560px)').matches) {
+            faq.forEach(function (other) {
+              if (other !== item) other.open = false;
+            });
+          }
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'faq_expand', question: item.querySelector('summary').textContent.trim() });
+        });
+      });
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var index = Number(tab.getAttribute('data-lesson'));
+          var data = lessonData[index];
+          if (!data) return;
+          tabs.forEach(function (other) { other.setAttribute('aria-selected', 'false'); other.setAttribute('tabindex', '-1'); });
+          tab.setAttribute('aria-selected', 'true');
+          tab.setAttribute('tabindex', '0');
+          document.getElementById('lesson-kicker').textContent = data.kicker;
+          document.getElementById('lesson-title').textContent = data.title;
+          document.getElementById('lesson-copy').textContent = data.copy;
+          document.getElementById('lesson-result').textContent = data.result;
+          document.getElementById('lesson-exercise').textContent = data.exercise;
+          document.getElementById('panel-aula').setAttribute('aria-labelledby', tab.id);
+        });
+        tab.addEventListener('keydown', function (event) {
+          if (event.key !== 'ArrowDown' && event.key !== 'ArrowRight' && event.key !== 'ArrowUp' && event.key !== 'ArrowLeft') return;
+          event.preventDefault();
+          var direction = (event.key === 'ArrowDown' || event.key === 'ArrowRight') ? 1 : -1;
+          var current = Array.prototype.indexOf.call(tabs, tab);
+          var next = tabs[(current + direction + tabs.length) % tabs.length];
+          next.focus();
+          next.click();
+        });
+      });
+
+      var deliveryTrack = document.querySelector('[data-delivery-track]');
+      var deliveryDots = document.querySelectorAll('[data-delivery-dots] .delivery-dot');
+      if (deliveryTrack && deliveryDots.length) {
+        var carouselButtons = document.querySelectorAll('[data-delivery-prev], [data-delivery-next]');
+        carouselButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            var card = deliveryTrack.querySelector('.delivery-card');
+            if (!card) return;
+            var gap = parseFloat(getComputedStyle(deliveryTrack).columnGap || getComputedStyle(deliveryTrack).gap || 0);
+            var direction = button.hasAttribute('data-delivery-next') ? 1 : -1;
+            deliveryTrack.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'delivery_carousel_click', direction: direction > 0 ? 'next' : 'previous' });
+          });
+        });
+        deliveryTrack.addEventListener('scroll', function () {
+          var card = deliveryTrack.querySelector('.delivery-card');
+          if (!card) return;
+          var gap = parseFloat(getComputedStyle(deliveryTrack).columnGap || getComputedStyle(deliveryTrack).gap || 0);
+          var step = card.getBoundingClientRect().width + gap;
+          var index = Math.max(0, Math.min(deliveryDots.length - 1, Math.round(deliveryTrack.scrollLeft / step)));
+          deliveryDots.forEach(function (dot, dotIndex) { dot.classList.toggle('is-active', dotIndex === index); });
+        }, { passive: true });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          var id = link.getAttribute('href');
+          if (!id || id === '#') return;
+          var target = document.querySelector(id);
+          if (!target) return;
+          event.preventDefault();
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 72, behavior: 'smooth' });
+        });
+      });
+
+      var stickyCta = document.querySelector('.mobile-sticky-cta');
+      var heroSection = document.querySelector('#hero');
+      var suppressZones = document.querySelectorAll('#oferta, #faq, #decisao, .pagefoot');
+      if (stickyCta && heroSection && 'IntersectionObserver' in window) {
+        var heroVisible = true;
+        var visibleSuppressZones = new Set();
+        function syncSticky() {
+          var suppressed = visibleSuppressZones.size > 0;
+          stickyCta.classList.toggle('is-visible', !heroVisible && !suppressed);
+          stickyCta.classList.toggle('is-suppressed', suppressed);
+        }
+        new IntersectionObserver(function (entries) {
+          heroVisible = entries[0].isIntersecting;
+          syncSticky();
+        }, { threshold: .01 }).observe(heroSection);
+        var suppressObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) visibleSuppressZones.add(entry.target);
+            else visibleSuppressZones.delete(entry.target);
+          });
+          syncSticky();
+        }, { rootMargin: '0px 0px -18% 0px', threshold: .01 });
+        suppressZones.forEach(function (zone) {
+          suppressObserver.observe(zone);
+        });
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'page_view', page: 'landing-vendedor-7' });
+      [25, 50, 75, 90].forEach(function (depth) {
+        var sent = false;
+        window.addEventListener('scroll', function () {
+          if (sent) return;
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+          if (max > 0 && (window.scrollY / max) * 100 >= depth) {
+            sent = true;
+            window.dataLayer.push({ event: 'scroll_depth', percent: depth });
+          }
+        }, { passive: true });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "kind": "critique-panel",
+  "score": 4.6,
+  "axes": {
+    "clarity": {
+      "score": 5,
+      "notes": "A headline obrigatória, a explicação dos perfis simbólicos e a progressão entre diagnóstico, pilares, autoridade e oferta tornam a proposta fácil de entender."
+    },
+    "hierarchy": {
+      "score": 5,
+      "notes": "A primeira dobra tem um foco evidente e as seções mantêm a ordem de decisão: identificação, problema, diagnóstico, solução, valor e compra."
+    },
+    "typography": {
+      "score": 4,
+      "notes": "A tipografia original foi preservada. A nova headline não corta no desktop nem no celular, e os blocos longos seguem legíveis em telas estreitas."
+    },
+    "motion": {
+      "score": 4,
+      "notes": "Carrossel, aulas interativas, FAQ, CTA fixo e estados existentes foram mantidos sem adicionar movimento ornamental."
+    },
+    "brand": {
+      "score": 5,
+      "notes": "A identidade escura com laranja, as imagens de Daniel, os componentes e a linguagem da metodologia Vendedor 7% foram preservados."
+    }
+  }
+}
